@@ -1,0 +1,9 @@
+<core:View
+	controllerName="ar.com.unq.controller.Principal"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Page
+		title="UNQbicame"
+		class="sapUiFioriObjectPage">
+	</Page>
+</core:View>
