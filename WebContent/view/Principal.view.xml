@@ -5,5 +5,17 @@
 	<Page
 		title="UNQbicame"
 		class="sapUiFioriObjectPage">
+		<IconTabBar> 
+			<items> 
+				<IconTabFilter text="Aulas" icon="sap-icon://chalkboard">
+					<SelectList
+						items="{
+							path: 'aulas>/'
+						}">
+						<core:Item key="{aulas>id}" text="{aulas>nombre}" />
+					</SelectList>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
 	</Page>
 </core:View>
