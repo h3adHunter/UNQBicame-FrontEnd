@@ -29,6 +29,23 @@
 						</items>
 					</Table>
 				</IconTabFilter>
+				<IconTabFilter text="Materias" icon="sap-icon://course-book">
+					<Table items="{ path: 'materias>/' }">
+						<columns>
+							<Column>
+								<Text text="Materia" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier
+										title="{materias>nombre}" text="{materias>numero}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</IconTabFilter>
 			</items>
 		</IconTabBar>
 	</Page>
