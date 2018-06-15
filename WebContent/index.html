@@ -7,9 +7,19 @@
 		<script src="resources/sap-ui-core.js"
 				id="sap-ui-bootstrap"
 				data-sap-ui-libs="sap.m"
-				data-sap-ui-theme="sap_bluecrystal">
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-resourceroots='{
+				"ar.com.unq": "./"
+				}'>
 		</script>
-
+		<script>
+			new sap.m.Shell({ 
+				app : new sap.ui.core.ComponentContainer({ 
+					name : "ar.com.unq" 
+				}) 
+			}).placeAt("content");
+		</script>
 	</head>
 	<body class="sapUiBody" role="application">
 		<div id="content"></div>
