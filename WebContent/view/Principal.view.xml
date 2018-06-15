@@ -8,12 +8,26 @@
 		<IconTabBar> 
 			<items> 
 				<IconTabFilter text="Aulas" icon="sap-icon://chalkboard">
-					<SelectList
-						items="{
-							path: 'aulas>/'
-						}">
-						<core:Item key="{aulas>id}" text="{aulas>nombre}" />
-					</SelectList>
+					<Table items="{ path: 'aulas>/' }">
+						<columns>
+							<Column>
+								<Text text="Nro. de aula" />
+							</Column>
+							<Column hAlign="End">
+								<Text text="Sector" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier
+										title="{aulas>nombre}"/>
+									<Text
+										text="{aulas>sector_nombre}{aulas>sector_piso}" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
 				</IconTabFilter>
 			</items>
 		</IconTabBar>
