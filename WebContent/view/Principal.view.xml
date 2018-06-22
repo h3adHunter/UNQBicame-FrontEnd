@@ -46,6 +46,19 @@
 						</items>
 					</Table>
 				</IconTabFilter>
+				<IconTabFilter text="Mapa" icon="sap-icon://course-book">
+					<HBox justifyContent="SpaceBetween">
+						<Image
+							src="resources/sectores.png"
+							densityAware="false">
+						</Image>
+						<Image
+							src="resources/mapa.jpg"
+							densityAware="false"
+							height="800px" >
+						</Image>											
+					</HBox>
+				</IconTabFilter>
 			</items>
 		</IconTabBar>
 	</Page>
