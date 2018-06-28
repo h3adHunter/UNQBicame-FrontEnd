@@ -50,7 +50,7 @@
 									<ObjectIdentifier
 										title="{aulas>nombre}"/>
 									<Text
-										text="{aulas>sector_nombre}{aulas>sector_piso}" />
+										text="{aulas>sector/nombre} {aulas>sector/piso}" />
 								</cells>
 							</ColumnListItem>
 						</items>
