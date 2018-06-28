@@ -46,7 +46,7 @@
 						</items>
 					</Table>
 				</IconTabFilter>
-				<IconTabFilter text="Mapa" icon="sap-icon://course-book">
+				<IconTabFilter text="Mapa" icon="sap-icon://map-2">
 					<HBox justifyContent="SpaceBetween">
 						<Image
 							src="resources/sectores.png"
