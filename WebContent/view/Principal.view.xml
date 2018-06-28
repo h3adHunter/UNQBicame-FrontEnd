@@ -7,6 +7,33 @@
 		class="sapUiFioriObjectPage">
 		<IconTabBar> 
 			<items> 
+				<IconTabFilter text="Cursadas" icon="sap-icon://appointment-2">
+					<Table items="{ path: 'cursadas>/' }">
+						<columns>
+							<Column>
+								<Text text="Materia" />
+							</Column>
+							<Column hAlign="Center">
+								<Text text="Aula" />
+							</Column>
+							<Column hAlign="Center">
+								<Text text="Horario" />
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier
+										title="{cursadas>materia/nombre}"/>
+									<Text
+										text="{cursadas>aula/nombre}" />
+									<Text
+										text="{cursadas>dia} {cursadas>hora_inicio} {cursadas>hora_fin}" />
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</IconTabFilter>
 				<IconTabFilter text="Aulas" icon="sap-icon://chalkboard">
 					<Table items="{ path: 'aulas>/' }">
 						<columns>
