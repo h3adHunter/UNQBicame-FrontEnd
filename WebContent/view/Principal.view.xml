@@ -45,7 +45,7 @@
 							</Column>
 						</columns>
 						<items>
-							<ColumnListItem>
+							<ColumnListItem type="Navigation" press="handleSeleccionAula">
 								<cells>
 									<ObjectIdentifier
 										title="{aulas>nombre}"/>

@@ -1,3 +1,4 @@
+//jQuery.sap.require('sap.m.Dialog');
 sap.ui.controller(
     "ar.com.unq.controller.Principal",
     {
@@ -68,7 +69,49 @@ sap.ui.controller(
                 	  console.log("Error en la conexion");
                    }
     	    });
-    	}
+    	},
+    	
+    	handleSeleccionAula: function(oEvent){
+    		var oView = this.getView();
+    		
+    		var aulaSeleccionada = oEvent.getSource().getBindingContext("aulas").getObject();
+    		var pathSeleccionado = oEvent.getSource().getBindingContext("aulas").getPath();
+    		
+    		console.log(aulaSeleccionada);
+    		console.log(pathSeleccionado);
+    		
+    		this.onDialogPress(aulaSeleccionada, pathSeleccionado);
+    	},
+    	
+    	onDialogPress: function (aulaSeleccionada, pathSeleccionado) {
+			if (!this.pressDialog) {
+				this.pressDialog = new sap.m.Dialog({
+					title: 'Detalle del aula ' + aulaSeleccionada.nombre,
+					content: [
+						new sap.m.List({
+							headerText: "Cursadas relacionadas",
+							items: {
+								path: 'aulas>' + pathSeleccionado + '/cursadas',
+								template: new sap.m.StandardListItem({
+									title: "{aulas>dia}"
+								})
+							}
+						})
+					],
+					beginButton: new sap.m.Button({
+						text: 'Cerrar',
+						press: function () {
+							this.pressDialog.close();
+						}.bind(this)
+					})
+				});
+
+				//to get access to the global model
+				this.getView().addDependent(this.pressDialog);
+			}
+
+			this.pressDialog.open();
+		}
     	
     }
 );
