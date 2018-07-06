@@ -5,9 +5,9 @@
 	<Page
 		title="UNQbicame"
 		class="sapUiFioriObjectPage">
-		<IconTabBar> 
+		<IconTabBar id="oTabs" selectedKey="cursadas"> 
 			<items> 
-				<IconTabFilter text="Cursadas" icon="sap-icon://appointment-2">
+				<IconTabFilter key="cursadas" text="Cursadas" icon="sap-icon://appointment-2">
 					<Table items="{ path: 'cursadas>/' }">
 						<columns>
 							<Column>
@@ -28,20 +28,20 @@
 									<Text
 										text="{cursadas>aula/nombre}" />
 									<Text
-										text="{cursadas>dia} {cursadas>hora_inicio} {cursadas>hora_fin}" />
+										text="{cursadas>dia} de {cursadas>hora_inicio} a {cursadas>hora_fin}" />
 								</cells>
 							</ColumnListItem>
 						</items>
 					</Table>
 				</IconTabFilter>
-				<IconTabFilter text="Aulas" icon="sap-icon://chalkboard">
+				<IconTabFilter key="aulas" text="Aulas" icon="sap-icon://chalkboard">
 					<Table items="{ path: 'aulas>/' }">
 						<columns>
 							<Column>
 								<Text text="Nro. de aula" />
 							</Column>
 							<Column hAlign="End">
-								<Text text="Sector" />
+								<Text text="" />
 							</Column>
 						</columns>
 						<items>
@@ -50,13 +50,13 @@
 									<ObjectIdentifier
 										title="{aulas>nombre}"/>
 									<Text
-										text="{aulas>sector/nombre} {aulas>sector/piso}" />
+										text="Sector {aulas>sector/nombre} Piso {aulas>sector/piso}" />
 								</cells>
 							</ColumnListItem>
 						</items>
 					</Table>
 				</IconTabFilter>
-				<IconTabFilter text="Materias" icon="sap-icon://course-book">
+				<IconTabFilter key="materias" text="Materias" icon="sap-icon://course-book">
 					<Table items="{ path: 'materias>/' }">
 						<columns>
 							<Column>
@@ -73,7 +73,7 @@
 						</items>
 					</Table>
 				</IconTabFilter>
-				<IconTabFilter text="Mapa" icon="sap-icon://map-2">
+				<IconTabFilter key="mapa" text="Mapa" icon="sap-icon://map-2">
 					<HBox justifyContent="SpaceBetween">
 						<Image
 							src="resources/sectores.png"

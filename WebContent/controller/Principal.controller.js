@@ -88,12 +88,27 @@ sap.ui.controller(
 				this.pressDialog = new sap.m.Dialog({
 					title: 'Detalle del aula ' + aulaSeleccionada.nombre,
 					content: [
+						new sap.m.ObjectHeader({
+							title: "Aula " + aulaSeleccionada.nombre,
+							responsive: true,
+							attributes: [
+								new sap.m.ObjectAttribute({
+									text: "Sector " + aulaSeleccionada.sector.nombre 
+								})
+							],
+							statuses: [
+								new sap.m.ObjectStatus({
+									text: "Piso " + aulaSeleccionada.sector.piso,
+									state: "Success"
+								})
+							]
+						}),
 						new sap.m.List({
 							headerText: "Cursadas relacionadas",
 							items: {
 								path: 'aulas>' + pathSeleccionado + '/cursadas',
 								template: new sap.m.StandardListItem({
-									title: "{aulas>dia}"
+									title: "{aulas>materia/nombre} el día {aulas>dia} de {aulas>hora_inicio} a {aulas>hora_fin}" 
 								})
 							}
 						})
